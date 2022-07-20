@@ -4,6 +4,13 @@ function newLine() {
     console.log("\n**************************************************\n");
 }
 
+function sadLine(num) {
+    for (let i = 0; i < num; i++) {
+        console.log("\n☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹ ☹");
+    }
+    
+}
+
 /* Always Hungry */
 newLine();
 console.log("loading always hungry challenge...\n");
@@ -107,3 +114,49 @@ reverse(normalArray);
 console.log(`\nreversed array is: ${reversedArray}\n`);
 console.log("exiting reverse challenge...");
 newLine();
+
+/* Fibonacci memeos */
+newLine();
+console.log("loading the f i b o n a c c i MeMeS...\n");
+// busted, no good, janky code. 0 fibonacci memeos/10
+// function fibonacciArray(n) {
+//     let storedNum = 0;
+//     let fibArr = [0, 1 ];
+//     for (let i = 0; i < n; i++) {
+//         previousNum = i ;
+//         let nextNum = storedNum + i;
+//         fibArr.push(nextNum);
+//         console.log(`fibArr[${i}] = ${nextNum}`);
+//         console.log(`previousNum is ${previousNum}`);
+//         console.log(`previousNum is ${storedNum}`);
+//         return storedNum;
+//     }
+//     return fibArr;
+// }
+
+let fibArr;
+
+function fibonacciArray(n) {
+    let fibArr = [0, 1 ];
+    for (let i = 1; i < n; i++) {
+        let nextIndex = fibArr[i - 1]  + fibArr[i];
+        console.log(`${fibArr[i - 1]} + ${fibArr[i]} is ${nextIndex}`)
+        fibArr.push(nextIndex);
+    }
+    printArray(fibArr);
+    return fibArr;
+}
+
+function printArray(arr) {
+    console.log("\nprinting array contents...\n");
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
+}
+
+fibonacciArray(10);
+console.log("\nending the the f i b o n a c c i MeMeS...");
+sadLine(5);
+
+
+
